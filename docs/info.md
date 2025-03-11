@@ -1,20 +1,24 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+Input the rule number / Wolfram code of an elementary cellular automaton on the
+bidirectional pins and eight bits of the previous generation's state on the
+dedicated input pins and the next generation's state will appear on the
+dedicated output pins. The computation wraps around, so output 0 uses inputs
+7, 0, and 1 as its previous state, and output 7 uses inputs 6, 7, and 0 as
+its previous state.
 
 ## How to test
 
-Explain how to use your project
+Set all bidirectional pins low (rule 0). All outputs should be low regardless of inputs.
+
+Set all bidirectional pins high (rule 255). All outputs should be high regardless of inputs.
+
+Set bidirectional pins 0, 1, 4, 5 low and 2, 3, 6, 7 high (rule 204). Each output should mirror its corresponding input.
+
+Set bidirectional pins 0, 1, 4, 5 high and 2, 3, 6, 7 low (rule 51). Each output should invert its corresponding input.
+
+You can find additional test cases in `test.py`.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Whatever switches or display elements or microcontrollers you want.

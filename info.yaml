@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "Tungsten 8-Bit Elementary Cellular Automaton Processor"                # Project title
+  author:       "Rebecca G. Bettencourt"                                                # Your name
+  discord:      "YoukaiRempeka"                                                         # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Computes the next generation of an elementary cellular automaton."     # One line description of what your project does
+  language:     "Verilog"                                                               # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0                                                                       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_rebeccargb_tungsten"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -23,34 +23,34 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "PREV0"
+  ui[1]: "PREV1"
+  ui[2]: "PREV2"
+  ui[3]: "PREV3"
+  ui[4]: "PREV4"
+  ui[5]: "PREV5"
+  ui[6]: "PREV6"
+  ui[7]: "PREV7"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "NEXT0"
+  uo[1]: "NEXT1"
+  uo[2]: "NEXT2"
+  uo[3]: "NEXT3"
+  uo[4]: "NEXT4"
+  uo[5]: "NEXT5"
+  uo[6]: "NEXT6"
+  uo[7]: "NEXT7"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "RULE0"
+  uio[1]: "RULE1"
+  uio[2]: "RULE2"
+  uio[3]: "RULE3"
+  uio[4]: "RULE4"
+  uio[5]: "RULE5"
+  uio[6]: "RULE6"
+  uio[7]: "RULE7"
 
 # Do not change!
 yaml_version: 6

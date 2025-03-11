@@ -1,27 +1,37 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# Tungsten 8-Bit Elementary Cellular Automaton Processor
 
-- [Read the documentation for project](docs/info.md)
+## How it works
+
+Input the rule number / Wolfram code of an elementary cellular automaton on the
+bidirectional pins and eight bits of the previous generation's state on the
+dedicated input pins and the next generation's state will appear on the
+dedicated output pins. The computation wraps around, so output 0 uses inputs
+7, 0, and 1 as its previous state, and output 7 uses inputs 6, 7, and 0 as
+its previous state.
+
+## How to test
+
+Set all bidirectional pins low (rule 0). All outputs should be low regardless of inputs.
+
+Set all bidirectional pins high (rule 255). All outputs should be high regardless of inputs.
+
+Set bidirectional pins 0, 1, 4, 5 low and 2, 3, 6, 7 high (rule 204). Each output should mirror its corresponding input.
+
+Set bidirectional pins 0, 1, 4, 5 high and 2, 3, 6, 7 low (rule 51). Each output should invert its corresponding input.
+
+You can find additional test cases in `test.py`.
+
+## External hardware
+
+Whatever switches or display elements or microcontrollers you want.
 
 ## What is Tiny Tapeout?
 
 Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
 
 To learn more and get started, visit https://tinytapeout.com.
-
-## Set up your Verilog project
-
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
-
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
-
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
 
 ## Resources
 
@@ -30,12 +40,3 @@ The GitHub action will automatically build the ASIC files using [OpenLane](https
 - [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
 - [Join the community](https://tinytapeout.com/discord)
 - [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
